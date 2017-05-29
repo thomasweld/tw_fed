@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import MenuBar from './MenuBar';
+import EventCards from './EventCards'
 import '../semantic/dist/semantic.min.css';
 import './App.css';
 
@@ -9,6 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <MenuBar/>
+        <EventCards/>
       </div>
     );
   }
