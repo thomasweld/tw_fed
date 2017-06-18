@@ -10,7 +10,7 @@
     "build": "node_modules/.bin/webpack",
     "dev": "cross-env NODE_ENV=development node_modules/.bin/webpack-dev-server --progress",
     "heroku-postbuild": "cross-env NODE_ENV=production node_modules/.bin/webpack -p",
-    "precommit": "node_modules/.bin/eslint app --cache --ext=.jsx",
+    // "precommit": "node_modules/.bin/eslint app --cache --ext=.jsx",
     "prepush": "node_modules/.bin/jest",
     "start": "node index.js",
     "test": "node_modules/.bin/jest",
