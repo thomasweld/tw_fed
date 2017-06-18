@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Grid } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
-import Logo from '../Logos/Logo';
 import MenuExampleInvertedSecondary from '../Navigation/Menu';
 
 class UnauthenticatedLayout extends React.Component {
@@ -13,14 +12,7 @@ class UnauthenticatedLayout extends React.Component {
       <div>
         <MenuExampleInvertedSecondary />
         <Container>
-          <Grid>
-            <Logo />
-          </Grid>
-          <div className="container-fluid spacer">
-            <div className="col-md-6 col-md-offset-3">
-              {children}
-            </div>
-          </div>
+          {children}
         </Container>
       </div>
     );

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Menu, Segment } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import logoFile from '../../../assets/ticketwin_logo.png';
 
-export default class MenuExampleInvertedSecondary extends Component {
-  state = { activeItem: 'home' };
+export default class MenuExampleStackable extends Component {
+  state = {};
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -11,31 +12,56 @@ export default class MenuExampleInvertedSecondary extends Component {
     const { activeItem } = this.state;
 
     return (
-      <Segment inverted>
-        <Menu inverted pointing secondary>
-          <Menu.Item
-            as={Link}
-            to="/"
-            name="home"
-            active={activeItem === 'home'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            as={Link}
-            to="/login"
-            name="Login"
-            active={activeItem === 'messages'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            as={Link}
-            to="/signup"
-            name="Signup"
-            active={activeItem === 'friends'}
-            onClick={this.handleItemClick}
-          />
-        </Menu>
-      </Segment>
+      <Menu stackable>
+        <Menu.Item className="heaerLogoWrapper">
+          <Link to="/"><img src={logoFile} alt="logo" className="headerLogo" /></Link>
+        </Menu.Item>
+        <Menu.Item
+          as={Link}
+          to="/createEvent"
+          name="createEvent"
+          active={activeItem === 'createEvent'}
+          onClick={this.handleItemClick}
+        >
+          Create Event
+        </Menu.Item>
+        <Menu.Item
+          as={Link}
+          to="/support"
+          name="support"
+          active={activeItem === 'support'}
+          onClick={this.handleItemClick}
+        >
+          Support
+        </Menu.Item>
+        <Menu.Item
+          as={Link}
+          to="/aboutus"
+          name="aboutus"
+          active={activeItem === 'aboutus'}
+          onClick={this.handleItemClick}
+        >
+          About Us
+        </Menu.Item>
+        <Menu.Item
+          as={Link}
+          to="/login"
+          name="login"
+          active={activeItem === 'login'}
+          onClick={this.handleItemClick}
+        >
+          Login
+        </Menu.Item>
+        <Menu.Item
+          as={Link}
+          to="/signup"
+          name="signup"
+          active={activeItem === 'signup'}
+          onClick={this.handleItemClick}
+        >
+          Sign Up
+        </Menu.Item>
+      </Menu>
     );
   }
 }
