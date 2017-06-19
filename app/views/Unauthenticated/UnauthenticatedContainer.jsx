@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 // Component imports
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
+import EventsHome from './components/EventsHome';
 import UnauthenticatedLayout from '../common/layouts/UnauthenticatedLayout';
 
 /**
@@ -43,6 +44,10 @@ export default class UnauthenticatedContainer extends Component {
     return (
       <UnauthenticatedLayout>
         <Switch>
+          <Route
+            path="/"
+            render={props => <EventsHome {...props} handleSubmit={this.login} />}
+          />
           <Route
             path="/login"
             render={props => <LoginForm {...props} handleSubmit={this.login} />}

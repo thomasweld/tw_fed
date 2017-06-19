@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom'
-
+import { NavLink } from 'react-router-dom';
+import logoFile from '../../../assets/ticket_win_white.png';
 
 class Navigation extends React.Component {
   render() {
     const Wrapper = styled.section`
-    background: papayawhip;
-    text-align: right;
-
+    background: lightgrey;
 `;
     const NavItem = styled.h4`
     font-size: 1.5em;
@@ -16,11 +14,23 @@ class Navigation extends React.Component {
     display: inline-block;
     padding: 0 8px 0 8px;
     margin: 10px;
-    text-decoration: none;
 `;
+    const NavLogo = styled.div`
+    max-width: 200px;
+    display: inline-block;
+    align-content: left
+`;
+
+    const navLogoStyle = {
+      backgroundImage: 'url(../../../assets/ticket_win_white.png)',
+      'max-width': '200px',
+    };
 
     return (
       <Wrapper>
+        <NavLogo>
+          <img style={navLogoStyle} src={logoFile} alt="Ticketwin Logo" />
+        </NavLogo>
         <NavItem>
           <NavLink to="/">Events Home</NavLink>
         </NavItem>
