@@ -18,27 +18,28 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 
 /**
  * @description Checking that you're building with the proper Node version
  */
 const packageJSON = require('./package.json');
-
 const isProduction = process.env.NODE_ENV === 'production';
+// console.log(`Running in production mode: ${isProduction}`);
 
-console.log(`Running in production mode: ${isProduction}`);
+// const expectedNodeVersion = packageJSON.engines.node
+//   .replace('v', '')
+//   .replace(' ', '');
 
-const expectedNodeVersion = packageJSON.engines.node
-  .replace('v', '')
-  .replace(' ', '');
+// const actualNodeVersion = process.version
+//   .replace('v', '')
+//   .replace(' ', '');
 
-const actualNodeVersion = process.version.replace('v', '').replace(' ', '');
+// if (expectedNodeVersion !== actualNodeVersion) {
+//   console.log('\x1b[33m%s\x1b[0m: ', `Expected Node Version ${expectedNodeVersion}, but using ${actualNodeVersion}`);
+//   process.exit(1);
+// }
 
-if (expectedNodeVersion !== actualNodeVersion) {
-  console.log('\x1b[33m%s\x1b[0m: ', `Expected Node Version ${expectedNodeVersion}, but using ${actualNodeVersion}`);
-  process.exit(1);
-}
 
 /**
  * @function entry
@@ -47,14 +48,18 @@ if (expectedNodeVersion !== actualNodeVersion) {
  */
 function entry() {
   if (isProduction) {
-    return ['babel-polyfill', './app/boot.jsx'];
+    return [
+      'babel-polyfill',
+      './app/boot.jsx',
+    ];
   }
   return [
     'babel-polyfill',
     'webpack-dev-server/client?http://localhost:8080',
     './app/boot.jsx',
   ];
-}
+};
+
 
 function exports() {
   const definedExports = {
@@ -89,9 +94,15 @@ function exports() {
         {
           test: /\.jsx/,
           loader: 'babel-loader',
-          include: [path.resolve(`${__dirname}/app`)],
+          include: [
+            path.resolve(`${__dirname}/app`),
+          ],
           query: {
-            presets: ['react', 'babel-preset-es2015', 'stage-0'],
+            presets: [
+              'react',
+              'babel-preset-es2015',
+              'stage-0',
+            ],
           },
         },
         {
@@ -107,21 +118,8 @@ function exports() {
           loader: 'source-map-loader',
           test: /\.js$/,
         },
-        // this handles .less translation
-        {
-          use: ExtractTextPlugin.extract({
-            use: ['css-loader', 'less-loader'],
-          }),
-          test: /\.less$/,
-        },
-      ],
-    },
-    // plugings: [
-    //   // this handles the bundled .css output file
-    //   new ExtractTextPlugin({
-    //     filename: '[name].[contenthash].css',
-    //   }),
-    // ],
+      ]
+    }
   };
 
   // Adding devServer props if not running production build
@@ -136,6 +134,7 @@ function exports() {
   }
 
   return definedExports;
-}
+};
+
 
 module.exports = exports();

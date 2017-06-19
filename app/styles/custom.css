@@ -1,20 +1,11 @@
 /* Elements */
 body {
-    background-color: #f3f3f3;
-    font-size: 14px !important;
+    background-color: #f1f1f1;
 }
 
 /* Classes */
 .spacer {
     margin-top: 40px;
-}
-
-.headerLogo {
-    max-width: 160px;
-}
-
-.heaerLogoWrapper {
-    padding: 0px !important;
 }
 
 /* Ids */

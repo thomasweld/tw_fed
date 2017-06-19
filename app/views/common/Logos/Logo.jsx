@@ -1,9 +1,14 @@
 import React from 'react';
-import { Image } from 'semantic-ui-react';
-import logoFile from '../../../assets/ticketwin_logo.png';
+import logoFile from '../../../assets/logo.png';
 
-const Logo = () => (
-  <Image src={logoFile} alt="LOGO" />
-);
+class Logo extends React.Component {
+  render() {
+    return (
+      <div>
+        <img src={logoFile} alt="LOGO" />
+      </div>
+    );
+  }
+}
 
 export default Logo;

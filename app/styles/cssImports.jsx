@@ -14,14 +14,5 @@
  */
 import 'normalize.css';
 
-
-/**
- * Bootswatch is a site with free Bootstrap based themes. For simplicity
- * sake, we're going to use them since most people have some experience
- * with bootstrap. However, the API is identical to bootstrap.
- */
-import 'bootswatch/flatly/bootstrap.css';
-
-
 // Here are some custom css files we wrote.
 import './custom.css';

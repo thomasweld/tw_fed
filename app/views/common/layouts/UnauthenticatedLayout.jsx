@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from 'semantic-ui-react';
-
-import MenuExampleInvertedSecondary from '../Navigation/Menu';
+import Navigation from '../Navigation/Navigation';
 
 class UnauthenticatedLayout extends React.Component {
   render() {
@@ -10,10 +8,10 @@ class UnauthenticatedLayout extends React.Component {
 
     return (
       <div>
-        <MenuExampleInvertedSecondary />
-        <Container>
+        <Navigation />
+        <div className="container-fluid spacer">
           {children}
-        </Container>
+        </div>
       </div>
     );
   }

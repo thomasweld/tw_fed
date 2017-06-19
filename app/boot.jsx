@@ -15,9 +15,7 @@ import ReactDOM from 'react-dom';
  * Even though we don't import anything, this allows
  * for the CSS files to be included in the project.
  */
-import 'semantic-ui-css/semantic.min.css';
 import './styles/cssImports';
-
 
 // Component imports
 // import App from './views/App';
