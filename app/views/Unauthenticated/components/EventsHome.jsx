@@ -16,6 +16,10 @@ class EventsHome extends Component {
         <EventCard />
         <EventCard />
         <EventCard />
+        <EventCard />
+        <EventCard />
+        <EventCard />
+        <EventCard />
       </EventsHomeWrapper>
     );
   }
