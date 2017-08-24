@@ -1,6 +1,12 @@
 export default {
-  paragraph: {
+  navbarUl: {
+    listStyleType: 'none',
     fontSize: 18,
-    color: 'red',
+    color: 'orange',
+  },
+  navbarLi: {
+    display: 'inline-block',
+    padding: '10px',
+    textDecoration: 'none',
   },
 };
