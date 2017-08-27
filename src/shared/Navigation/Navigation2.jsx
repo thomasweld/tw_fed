@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import RaisedButton from 'material-ui/RaisedButton';
 import navigationStyles from './navigationStyles';
 
 export default class Navigation extends React.Component {
@@ -12,7 +13,7 @@ export default class Navigation extends React.Component {
               to={'/'}
               activeStyle={{ color: 'red' }}
             >
-              Events
+              <RaisedButton label="test" />
             </Link>
           </li>
           <li style={navigationStyles.navbarLi}>
